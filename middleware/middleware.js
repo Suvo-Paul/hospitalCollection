@@ -12,9 +12,8 @@ const auth = (req, res, next) => {
 
             req.user = user
         } else {
-            return res.send({
+            return res.status(401).send({
                 success: false,
-                status: 401,
                 message: "Unauthorized user"
             })
         }
